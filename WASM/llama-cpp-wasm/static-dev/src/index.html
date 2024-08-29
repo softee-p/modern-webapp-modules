@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Inference in Browser</title>
+    <script src="example.js" type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>LLM Inference in Browser</h1>
+        <p>
+            This demonstration enables you to run LLM models directly in your
+            browser utilizing JavaScript, WebAssembly, and llama.cpp.
+        </p>
+        <p>
+            When you click <strong>Run</strong>, the model will be first downloaded and cached in
+            the browser.
+        </p>
+    </div>
+
+    <div class="container" role="main">
+        <section>
+            <h2>Demo</h2>
+            <label for="model">Model:</label>
+            <select id="model"></select>
+            <br><br>
+            <label for="prompt">Prompt:</label>
+            <textarea id="prompt" rows="4" cols="50"></textarea>
+            <br><br>
+            <pre id="result"></pre>
+        </section>
+
+        <section>
+            <button id="run">Run</button>
+            <span id="run-progress-loading-model" hidden>Loading model...</span>
+            <span id="run-progress-loaded-model" hidden>Loaded model</span>
+            <span id="run-progress-generating" hidden>Generating...</span>
+            <progress id="model-progress" value="0" max="100" hidden></progress>
+        </section>
+    </div>
+</body>
+</html>
