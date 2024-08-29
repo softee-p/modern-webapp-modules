@@ -1,5 +1,7 @@
-##Static and dynamic WebApp component examples.
+## Static and dynamic WebApp component examples.
 
-#Current Modules:
+# Current Modules:
+
 - Gaussian Splat renderers
+
 - Local LLM inference with WebAssembly

@@ -1,0 +1,1 @@
+# Using [gsplat.js](https://github.com/huggingface/gsplat.js) renderer with .compressed.ply format
