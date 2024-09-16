@@ -10,9 +10,12 @@ const GaussianSplatsViewer = () => {
     if (!containerRef.current || viewerRef.current) return;
 
     const viewer = new GaussianSplats3D.Viewer({
-      'cameraUp': [0, -1, -0.6],
-      'initialCameraPosition': [-1, -4, 6],
-      'initialCameraLookAt': [0, 4, 0]
+      'sceneRevealMode': 'Gradual',
+      'cameraUp': [0, 1, 0], // Adjust this if needed
+      'initialCameraPosition': [0, 0, 5], // Adjust these values
+      'initialCameraLookAt': [0, 0, 0], // This should be the center of your model
+      // 'fov': 70, // Adjust field of view if needed
+      'sphericalHarmonicsDegree': 2
     });
 
     viewerRef.current = viewer;
@@ -22,9 +25,12 @@ const GaussianSplatsViewer = () => {
     viewer.rootElement.style.width = '100%';
     viewer.rootElement.style.height = '100%';
 
-    viewer.addSplatScene('/splats/mkw-rock0.splat', {
+    viewer.addSplatScene('/splats/rock_splatfacto.ksplat', {
+      'progressiveLoad': true,
       'splatAlphaRemovalThreshold': 5,
-      'showLoadingUI': true,
+      'position': [0, 0, 0], // Adjust if needed to center your model
+      'rotation': [1, 0, 0, 0], // Adjust rotation if model is tilted (x, y, z, w quaternion)
+      'scale': [1, 1, 1] // Adjust scale if needed
     })
     .then(() => {
       viewer.start();
